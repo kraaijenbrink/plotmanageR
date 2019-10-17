@@ -1,3 +1,3 @@
 # plotmanageR
 
-An RStudio addin to manage external (x11) plot windows using keyboard shortcuts
+An RStudio addin with functions to manage external (x11) plot windows, mappable to keyboard shortcuts
