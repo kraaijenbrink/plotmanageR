@@ -12,3 +12,8 @@ Name: Activate previous plot window
 Description: Activate previous plot window
 Binding: prevWindow
 Interactive: false
+
+Name: Close all plots
+Description: Close and clear all open plot devices
+Binding: closeAllWindows
+Interactive: false

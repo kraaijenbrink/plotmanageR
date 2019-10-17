@@ -20,10 +20,17 @@ getOS <- function(){
 
 # open an x11 window
 openWindow <- function(){
-  if (getOS() == 'windows'){
-    grDevices::windows(width=8, height=8, record=T)
-  }else{
-    grDevices::x11(width=8, height=8)
+  if (getOS() == 'windows') {
+    grDevices::windows(
+      width  = 8,
+      height = 8,
+      record = T
+    )
+  } else{
+    grDevices::x11(
+      width  = 8,
+      height = 8
+    )
   }
 }
 
@@ -32,6 +39,21 @@ nextWindow <- function(){
   grDevices::dev.set()
 }
 prevWindow <- function(){
-  grDevices::dev.set(which=grDevices::dev.prev())
+  grDevices::dev.set(
+    which=grDevices::dev.prev()
+  )
 }
 
+# close all active plot windows
+closeAllWindows <- function(){
+  devs  <- dev.list()
+  ndevs <- length(devs)
+  if (ndevs){
+    if ('RStudioGD' %in% names(devs)){
+      ndevs <- ndevs-1
+    }
+    for (i in 1:ndevs){
+      dev.off()
+    }
+  }
+}
