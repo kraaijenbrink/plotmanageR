@@ -21,9 +21,9 @@ getOS <- function(){
 # open an x11 window
 openWindow <- function(){
   if (getOS() == 'windows'){
-    windows(width=8, height=8, record=T)
+    grDevices::windows(width=8, height=8, record=T)
   }else{
-    x11(width=8, height=8)
+    grDevices::x11(width=8, height=8)
   }
 }
 
@@ -32,6 +32,6 @@ nextWindow <- function(){
   grDevices::dev.set()
 }
 prevWindow <- function(){
-  grDevices::dev.prev()
+  grDevices::dev.set(which=grDevices::dev.prev())
 }
 
