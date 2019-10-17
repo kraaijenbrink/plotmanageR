@@ -1,0 +1,14 @@
+Name: New external plot window
+Description: Open new plot window
+Binding: openWindow
+Interactive: false
+
+Name: Activate next
+Description: Activate next plot window
+Binding: nextWindow
+Interactive: false
+
+Name: Activate previous
+Description: Activate previous plot window
+Binding: prevWindow
+Interactive: false
