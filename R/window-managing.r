@@ -1,7 +1,16 @@
 # Functions to control external windows
-# Only works on windows (for now)
+# Only tested on windows
+#
+# Philip Kraaijenbrink
+# 20181017
 
-# get system as string
+
+
+# get system as string  ====================================
+
+# function taken from R-bloggers:
+# https://www.r-bloggers.com/identifying-the-os-from-r/
+
 getOS <- function(){
   sysinf <- Sys.info()
   if (!is.null(sysinf)){
@@ -18,13 +27,15 @@ getOS <- function(){
   tolower(os)
 }
 
-# open an x11 window
+
+# open an x11 window ====================================
 openWindow <- function(){
   if (getOS() == 'windows') {
     grDevices::windows(
       width  = 8,
       height = 8,
-      record = T
+      record = T,
+      restoreConsole=T
     )
   } else{
     grDevices::x11(
@@ -34,7 +45,8 @@ openWindow <- function(){
   }
 }
 
-# switch active plot window
+
+# switch active plot window  ====================================
 nextWindow <- function(){
   grDevices::dev.set()
 }
@@ -44,7 +56,8 @@ prevWindow <- function(){
   )
 }
 
-# close all active plot windows
+
+# close all active plot windows  ====================================
 closeAllWindows <- function(){
   devs  <- dev.list()
   ndevs <- length(devs)
