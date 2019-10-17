@@ -3,12 +3,12 @@ Description: Open new plot window
 Binding: openWindow
 Interactive: false
 
-Name: Activate next
+Name: Activate next plot window
 Description: Activate next plot window
 Binding: nextWindow
 Interactive: false
 
-Name: Activate previous
+Name: Activate previous plot window
 Description: Activate previous plot window
 Binding: prevWindow
 Interactive: false
